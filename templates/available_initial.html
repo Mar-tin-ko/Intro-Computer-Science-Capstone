@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Available flats
+{% endblock %}
+
+{% block main %}
+    <div>
+      <p style="margin-left: 14px;" class="summary"> The flats in the following table are administred and provided by
+          <a href="https://www.sozialbau.at/" target="_blank" id="hyperlink">Sozialbau.at</a>.
+      </p>
+      <p style="font-style:italic; margin-left: 14px;" class="summary"> Click the update button to see the latest results!
+      </p>
+      <button style="display:block; margin: 0 auto;" type="submit" class="btn btn-primary"
+              onclick="location.href='/available'">Update</button>
+      <p>      </p>
+      <table class="table table-striped" style="width: 70%; align; margin-left: auto; margin-right: auto;">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">District</th>
+              <th scope="col">Address</th>
+              <th scope="col">Number_rooms</th>
+              <th scope="col">Area</th>
+              <th scope="col">Rent</th>
+              <th scope="col">Weblink</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+      </table>
+    </div>
+    <script>
+
+    </script>
+{% endblock %}
+

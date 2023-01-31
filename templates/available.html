@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Available flats
+{% endblock %}
+
+{% block main %}
+
+    <div>
+      <p style="margin-left: 14px;" class="summary"> The flats in the following table are administred and provided by
+          <a href="https://www.sozialbau.at/" target="_blank" id="hyperlink">Sozialbau.at</a>.
+      </p>
+      <p style="margin-left: 14px; font-style:italic" class="summary"> Table successfully updated! <a id="feedback"> </a>
+      </p>
+
+      <button style="display:block; margin: 0 auto;" class="btn btn-secondary" type="submit">Update</button>
+      <p> </p>
+      <table class="table table-striped" style="width: 80%; align; margin-left: auto; margin-right: auto;">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">District</th>
+              <th scope="col">Address</th>
+              <th scope="col">Rooms</th>
+              <th scope="col">Area</th>
+              <th scope="col">Rent</th>
+              <th scope="col">Weblink</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% if count == 1 %}
+              {% for row in database %}
+              <tr>
+                  <td scope="row">{{ loop.index }}</td>
+                  <td>{{ row["District"] }}</td>
+                  <td>{{ row["Address"] }}</td>
+                  <td>{{ row["Number_rooms"] }}</td>
+                  <td>{{ row["Area"] }}m2</td>
+                  <td> €{{ row["Rent"] }}</td>
+                  <td> <a href={{ row['Website'] }} target="_blank" id="hyperlink">Show flat details </a></td>
+              </tr>
+              {% endfor %}
+          {% endif %}
+          </tbody>
+      </table>
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script>
+        //document.getElementById("feedback").innerHTML = "Click the update button to see the latest results!";
+        let update_btn = document.getElementById("update_btn"); //create variable button
+
+        //update_btn.addEventListener("click", function() {
+            //https://dataanalyticsireland.ie/2021/12/13/how-to-pass-a-javascript-variable-to-python-using-json/
+            //var count = 1;
+            //var count = JSON.stringify(count_switch); // Stringify converts a JavaScript object or value to a JSON string
+            //console.log(count); // Prints the variables to console window, which are in the JSON format
+            //window.alert(count);
+            //$.ajax({
+            //    url:"/available",
+            //   type:"POST",
+            //    contentType: "application/json",
+            //    data: JSON.stringify(count)});
+            //update_btn.style.backgroundColor = "grey"; //change the background color
+            //update_btn.style.color  = "#DCDCDC"; //change the font color
+            //document.getElementById("feedback").innerHTML = "Table succesfully updated!"; //change the content of the feedback paragraph
+            });
+    </script>
+{% endblock %}
+
