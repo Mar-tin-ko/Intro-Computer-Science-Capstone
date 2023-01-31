@@ -1,4 +1,4 @@
-## CS50's Introduction to Computer Science
+## CS50x Introduction to Computer Science
 This is Harvard University's (HarvardX's) introduction to the intellectual enterprises of computer science and programming provided on Coursera learning platform. Topics include abstraction, algorithms, data structures, encapsulation, resource management, security, software engineering, and web development. Languages include C, Python, SQL, and JavaScript plus CSS and HTML. The study load of the course is approximately 180 hours.
 
 ### Key Competences 
